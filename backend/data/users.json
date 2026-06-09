@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0a0c2665-5880-43e3-b0d7-e3acbcf42a4c",
+    "email": "ali20260529180029@example.com",
+    "passwordHash": "$2a$12$/TZi6oAlU/h27yNgX47lguFZHlEgNGNYr4XbhKa17ySNOvgJUccLa",
+    "role": "student",
+    "createdAt": "2026-05-29T13:00:30.207Z",
+    "updatedAt": "2026-05-29T13:00:30.207Z"
+  },
+  {
+    "id": "782facad-37b6-49f3-9b9b-cc594ae5658c",
+    "email": "ali20260529180122@example.com",
+    "passwordHash": "$2a$12$Vef/i26gFXDttQTdK4YeTetU1uYTRtg9n/EzmE3lM1NPSxBSvJ/j6",
+    "role": "student",
+    "createdAt": "2026-05-29T13:01:23.191Z",
+    "updatedAt": "2026-05-29T13:01:23.191Z"
+  },
+  {
+    "id": "9838309c-6456-4ab6-a3b4-db43d4534255",
+    "email": "qa20260601232949@example.com",
+    "passwordHash": "$2a$12$p6J3FCxwiIiXr3vSWhziweZKiTLvk4Df6Nxpjv4mUvryceUJAaPlq",
+    "role": "student",
+    "createdAt": "2026-06-01T18:29:50.197Z",
+    "updatedAt": "2026-06-01T18:29:50.197Z"
+  }
+]

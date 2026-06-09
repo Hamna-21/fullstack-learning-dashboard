@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DecodeLabs — Full Stack Development · Batch 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="learningdashboard.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="cur-ring"></div>
+
+<nav>
+  <a class="nav-brand" onclick="showPage('home')">
+    <div class="brand-mark">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
+        <path d="M14 7L21 11V17L14 21L7 17V11L14 7Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+        <circle cx="14" cy="14" r="2" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+    </div>
+    <span class="brand-name">DecodeLabs</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" onclick="showPage('home')">Home</a>
+    <a class="nav-link" onclick="showPage('courses')">Courses</a>
+    <a class="nav-link" onclick="showPage('dashboard')">Dashboard</a>
+    <a class="nav-link" onclick="showPage('tasks')">Tasks</a>
+    <a class="nav-link" onclick="showPage('analytics')">Analytics</a>
+    <a class="nav-link" onclick="showPage('certs')">Certificates</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-nav" id="nav-signin" onclick="showPage('auth')">Sign In</button>
+    <button class="btn-nav-solid" id="nav-signup" onclick="showPage('auth')">Sign Up</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <!-- Geometric background -->
+    <div class="geo-wrap">
+      <div class="geo-block gb1"></div>
+      <div class="geo-block gb2"></div>
+      <div class="geo-block gb3"></div>
+      <div class="geo-block gb4"></div>
+      <div class="geo-block gb5"></div>
+      <div class="geo-block gb6"></div>
+      <div class="light-beam"></div>
+      <div class="beam-edge-left"></div>
+      <div class="inner-v"></div>
+      <div class="beam-glow"></div>
+      <div class="geo-block gb7"></div>
+      <div class="geo-block gb8"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-star">✦</span>
+        Full Stack Development Program · Batch 2026
+      </div>
+      <h1 class="hero-h1">The Future Of Digital<br><span>Craftsmanship</span></h1>
+      <p class="hero-sub">Project-based learning that transforms students into industry-ready Full Stack Developers. No frameworks first — master the fundamentals.</p>
+      <button class="btn-hero" onclick="showPage('courses')">Get Started →</button>
+    </div>
+
+    <div class="trusted">
+      <div class="trusted-label">Powered by DecodeLabs · Trusted by innovative teams worldwide.</div>
+      <div class="trusted-logos">
+        <div class="t-logo">
+          <svg class="t-icon" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.5"/></svg>
+          DecodeLabs
+        </div>
+        <div class="t-logo">
+          <svg class="t-icon" viewBox="0 0 20 20" fill="none"><polygon points="10,2 18,7 18,13 10,18 2,13 2,7" stroke="currentColor" stroke-width="1.5"/></svg>
+          Spherule
+        </div>
+        <div class="t-logo">
+          <svg class="t-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          GlobalBank
+        </div>
+        <div class="t-logo">
+          <svg class="t-icon" viewBox="0 0 20 20" fill="none"><path d="M3 10h4l3-7 4 14 3-7h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Boltshift
+        </div>
+        <div class="t-logo">
+          <svg class="t-icon" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5"/></svg>
+          FeatherDev
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="h-rule">
+  <div class="sec">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+      <div>
+        <span class="sec-eyebrow">The Toolkit</span>
+        <h2 class="sec-title">Your Raw Materials</h2>
+        <p class="sec-sub">No frameworks first. Master HTML5, CSS3, and JavaScript before you touch React or Node. This is the DecodeLabs mandate.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:14px;overflow:hidden">
+          <div style="padding:20px 22px;background:var(--card);display:flex;gap:16px;align-items:flex-start">
+            <span style="font-size:22px;opacity:0.7">🏗️</span>
+            <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;color:#bbb;margin-bottom:4px">HTML5 — The Infrastructure</div><div style="font-size:13px;color:var(--text3);font-weight:300;line-height:1.6">Semantic landmarks. Not just divs — the right element for the right job. Bedrock of SEO and accessibility.</div></div>
+          </div>
+          <div style="padding:20px 22px;background:var(--card);display:flex;gap:16px;align-items:flex-start">
+            <span style="font-size:22px;opacity:0.7">🎨</span>
+            <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;color:#bbb;margin-bottom:4px">CSS3 — The Skin</div><div style="font-size:13px;color:var(--text3);font-weight:300;line-height:1.6">Grid for macro layouts. Flexbox for micro components. Container queries and clamp() for fluid typography.</div></div>
+          </div>
+          <div style="padding:20px 22px;background:var(--card);display:flex;gap:16px;align-items:flex-start">
+            <span style="font-size:22px;opacity:0.7">⚡</span>
+            <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;color:#bbb;margin-bottom:4px">JavaScript — The Logic</div><div style="font-size:13px;color:var(--text3);font-weight:300;line-height:1.6">State management and interactive functionality. Pure JS, no libraries — until you earn them.</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="sec-eyebrow">The Vision</span>
+        <h2 class="sec-title">Mobile-First Always</h2>
+        <p class="sec-sub">Construct digital experiences that honour the Mobile-First paradigm. The web is a dynamic, inclusive information system.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <div style="border:1px solid var(--border);border-radius:12px;padding:18px 20px;background:var(--card)">
+            <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Standard 1</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;color:#bbb;margin-bottom:4px">Semantic Integrity</div>
+            <div style="font-size:13px;color:var(--text3);font-weight:300">Code for AI and Accessibility. Proper semantics = Table of Contents for screen readers.</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:12px;padding:18px 20px;background:var(--card)">
+            <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Standard 2</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;color:#bbb;margin-bottom:4px">2025 UI/UX Compliance</div>
+            <div style="font-size:13px;color:var(--text3);font-weight:300">Warm, grounded aesthetics. Mocha Mousse + Ethereal Blue + Moonlit Grey.</div>
+          </div>
+          <div style="border:1px solid var(--border);border-radius:12px;padding:18px 20px;background:var(--card)">
+            <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Standard 3</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:600;color:#bbb;margin-bottom:4px">Universal Access</div>
+            <div style="font-size:13px;color:var(--text3);font-weight:300">Strict WCAG adherence. Your code determines who has access to information.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Roadmap section -->
+  <hr class="h-rule">
+  <div class="sec">
+    <div style="text-align:center;margin-bottom:56px">
+      <span class="sec-eyebrow">Execution Roadmap</span>
+      <h2 class="sec-title" style="max-width:500px;margin:0 auto 12px">Six Phases. One Project.</h2>
+      <p class="sec-sub" style="margin:0 auto">Complete Project 1 to earn your badge and unlock all subsequent projects next week.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden">
+      <div style="background:var(--card);padding:24px 18px;text-align:center">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,0.06);margin-bottom:12px;line-height:1">01</div>
+        <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Phase</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;color:#bbb;margin-bottom:6px">Discovery</div>
+        <div style="font-size:11.5px;color:var(--text3);font-weight:300;line-height:1.5">Define "How Might We"</div>
+      </div>
+      <div style="background:var(--card);padding:24px 18px;text-align:center">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,0.06);margin-bottom:12px;line-height:1">02</div>
+        <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Phase</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;color:#bbb;margin-bottom:6px">Wireframe</div>
+        <div style="font-size:11.5px;color:var(--text3);font-weight:300;line-height:1.5">Grayscale, mobile-first</div>
+      </div>
+      <div style="background:var(--card);padding:24px 18px;text-align:center">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,0.06);margin-bottom:12px;line-height:1">03</div>
+        <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Phase</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;color:#bbb;margin-bottom:6px">Semantics</div>
+        <div style="font-size:11.5px;color:var(--text3);font-weight:300;line-height:1.5">HTML Landmarks</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.025);padding:24px 18px;text-align:center;border-left:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08)">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,0.1);margin-bottom:12px;line-height:1">04</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Phase</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;color:#ccc;margin-bottom:6px">Style</div>
+        <div style="font-size:11.5px;color:#666;font-weight:300;line-height:1.5">CSS Grid/Flex &amp; 2025 Palette</div>
+      </div>
+      <div style="background:var(--card);padding:24px 18px;text-align:center">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,0.06);margin-bottom:12px;line-height:1">05</div>
+        <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Phase</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;color:#bbb;margin-bottom:6px">Logic</div>
+        <div style="font-size:11.5px;color:var(--text3);font-weight:300;line-height:1.5">State &amp; Interactivity</div>
+      </div>
+      <div style="background:var(--card);padding:24px 18px;text-align:center">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,0.06);margin-bottom:12px;line-height:1">06</div>
+        <div style="font-size:11px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Phase</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;color:#bbb;margin-bottom:6px">Audit</div>
+        <div style="font-size:11.5px;color:var(--text3);font-weight:300;line-height:1.5">LCP/CLS &amp; Accessibility</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<div id="page-courses" class="page">
+  <div class="page-wrap">
+    <span class="sec-eyebrow">Curriculum</span>
+    <div class="pg-title">Course Library</div>
+    <div class="pg-sub">Project-based modules aligned to the DecodeLabs execution roadmap</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="fTab(this)">All</button>
+      <button class="tab-btn" onclick="fTab(this)">Frontend</button>
+      <button class="tab-btn" onclick="fTab(this)">Backend</button>
+      <button class="tab-btn" onclick="fTab(this)">DevOps</button>
+    </div>
+    <div class="course-grid">
+      <div class="c-card"><div class="c-num">Project 01</div><span class="c-icon">🏗️</span><span class="c-tag">Frontend</span><div class="c-title">Responsive Frontend Interface</div><div class="c-desc">Build a fully responsive web interface using semantic HTML5, CSS Grid/Flexbox, and vanilla JavaScript. Mobile-first, no frameworks.</div><div class="c-footer"><span class="c-meta">6 steps · Discovery → Audit</span><div class="c-arrow">→</div></div></div>
+      <div class="c-card"><div class="c-num">Pillar 01</div><span class="c-icon">⚙️</span><span class="c-tag">Strategy</span><div class="c-title">Strategy &amp; The Blueprint</div><div class="c-desc">Empathy Maps, low-fidelity wireframes, and the Golden Rule: if it doesn't work in grayscale, color won't fix it.</div><div class="c-footer"><span class="c-meta">Visily · Balsamiq · Pen &amp; Paper</span><div class="c-arrow">→</div></div></div>
+      <div class="c-card"><div class="c-num">Pillar 02</div><span class="c-icon">🎨</span><span class="c-tag">Visual Design</span><div class="c-title">Visual Design &amp; 2025 Aesthetics</div><div class="c-desc">Mocha Mousse, Ethereal Blue, Moonlit Grey. Max 2 font families, 3 weights. Warmth &amp; grounding over sterile tech.</div><div class="c-footer"><span class="c-meta">Montserrat · Roboto · CSS Variables</span><div class="c-arrow">→</div></div></div>
+      <div class="c-card"><div class="c-num">Pillar 03A</div><span class="c-icon">🧱</span><span class="c-tag">HTML5</span><div class="c-title">Implementation — The Foundation</div><div class="c-desc">Semantic HTML5 landmarks: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;footer&gt;. Proper semantics = accessibility + SEO + AI readability.</div><div class="c-footer"><span class="c-meta">HTML5 · WCAG · Semantic Integrity</span><div class="c-arrow">→</div></div></div>
+      <div class="c-card"><div class="c-num">Pillar 03B</div><span class="c-icon">📐</span><span class="c-tag">CSS</span><div class="c-title">Implementation — The Framework</div><div class="c-desc">CSS Grid for macro layouts, Flexbox for micro components. Mobile-first: single column → 768px tablet → 1024px desktop.</div><div class="c-footer"><span class="c-meta">CSS Grid · Flexbox · Media Queries</span><div class="c-arrow">→</div></div></div>
+      <div class="c-card"><div class="c-num">Roadmap</div><span class="c-icon">🗺️</span><span class="c-tag">Execution</span><div class="c-title">The Execution Roadmap</div><div class="c-desc">6 phases from Discovery to Audit. Complete Project 1 to earn your badge and unlock all projects for next week.</div><div class="c-footer"><span class="c-meta">🏅 Badge earned on completion</span><div class="c-arrow">→</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="page-dashboard" class="page">
+  <div class="page-wrap" style="padding-top:80px">
+    <div class="dash-shell">
+      <div class="dash-sb">
+        <div class="sb-top">
+          <div class="sb-av">AM</div>
+          <div class="sb-name">Ali Malik</div>
+          <div class="sb-role">Full Stack Developer</div>
+        </div>
+        <div class="sb-section-lbl">Main</div>
+        <div class="sb-item active">🏠 Overview</div>
+        <div class="sb-item" onclick="showPage('courses')">📚 Courses <span class="sb-cnt">3</span></div>
+        <div class="sb-item" onclick="showPage('tasks')">✅ Tasks <span class="sb-cnt">5</span></div>
+        <div class="sb-item" onclick="showPage('analytics')">📊 Analytics</div>
+        <div class="sb-section-lbl">Workspace</div>
+        <div class="sb-item">💻 Code Editor</div>
+        <div class="sb-item">📝 Notes</div>
+        <div class="sb-item">👥 Team</div>
+        <div class="sb-item" onclick="showPage('certs')">🏆 Certificates</div>
+      </div>
+      <div class="dash-body">
+        <div class="dash-hdr">
+          <div>
+            <div class="dash-greeting">Good morning, Ali 👋</div>
+            <div class="dash-greeting-sub">Project 1: Responsive Frontend Interface — 3 tasks due today</div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn-sm">+ New Task</button>
+            <button class="btn-sm" onclick="logout()">Logout</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="m-card"><div class="m-icon">📈</div><div class="m-val">70%</div><div class="m-lbl">Overall Progress</div><div class="m-delta up">↑ 8% this week</div></div>
+          <div class="m-card"><div class="m-icon">🔥</div><div class="m-val">14</div><div class="m-lbl">Day Streak</div><div class="m-delta up">↑ Personal best</div></div>
+          <div class="m-card"><div class="m-icon">⭐</div><div class="m-val">4,820</div><div class="m-lbl">XP Earned</div><div class="m-delta up">↑ Top 5%</div></div>
+          <div class="m-card"><div class="m-icon">✅</div><div class="m-val">23/32</div><div class="m-lbl">Tasks Done</div><div class="m-delta dn">3 overdue</div></div>
+        </div>
+        <div class="dash-grid2">
+          <div class="i-card">
+            <h3>Module Progress</h3>
+            <div class="prog-item"><div class="prog-row"><span>React &amp; Next.js</span><span>100%</span></div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div></div>
+            <div class="prog-item"><div class="prog-row"><span>Node.js &amp; Express</span><span>75%</span></div><div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div></div>
+            <div class="prog-item"><div class="prog-row"><span>MongoDB</span><span>40%</span></div><div class="prog-bar"><div class="prog-fill" style="width:40%"></div></div></div>
+            <div class="prog-item"><div class="prog-row"><span>Demo Auth</span><span>20%</span></div><div class="prog-bar"><div class="prog-fill" style="width:20%"></div></div></div>
+            <div class="prog-item" style="margin-bottom:0"><div class="prog-row"><span>Docker &amp; DevOps</span><span>5%</span></div><div class="prog-bar"><div class="prog-fill" style="width:5%"></div></div></div>
+          </div>
+          <div class="i-card">
+            <h3>Weekly Activity</h3>
+            <div class="chart-bars" id="act-chart"></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px">
+              <span style="font-size:10.5px;color:var(--text3)">Mon</span><span style="font-size:10.5px;color:var(--text3)">Tue</span><span style="font-size:10.5px;color:var(--text3)">Wed</span><span style="font-size:10.5px;color:var(--text3)">Thu</span><span style="font-size:10.5px;color:var(--text3)">Fri</span><span style="font-size:10.5px;color:var(--text3)">Sat</span><span style="font-size:10.5px;color:var(--text3)">Sun</span>
+            </div>
+          </div>
+        </div>
+        <div class="i-card" style="margin-top:16px">
+          <h3>Today's Tasks</h3>
+          <div class="task-list">
+            <div class="task-row"><div class="chk done">✓</div><div style="flex:1"><div class="task-name">Complete HTML semantics assignment</div><div class="task-due">Due: Today · 2h</div></div><span class="pri phi">High</span></div>
+            <div class="task-row"><div class="chk"></div><div style="flex:1"><div class="task-name">Build responsive layout with CSS Grid</div><div class="task-due">Due: Today · 4h</div></div><span class="pri phi">High</span></div>
+            <div class="task-row"><div class="chk"></div><div style="flex:1"><div class="task-name">Review wireframing techniques — Pillar 1</div><div class="task-due">Due: Tomorrow · 1h</div></div><span class="pri pme">Medium</span></div>
+            <div class="task-row"><div class="chk done">✓</div><div style="flex:1"><div class="task-name">Submit Project 1 proposal to supervisor</div><div class="task-due">Submitted · Yesterday</div></div><span class="pri plo">Done</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TASKS -->
+<div id="page-tasks" class="page">
+  <div class="page-wrap">
+    <span class="sec-eyebrow">Project 1</span>
+    <div class="pg-title">Project Task Board</div>
+    <div class="pg-sub">Track and manage your Project 1 deliverables — Responsive Frontend Interface</div>
+    <div class="board">
+      <div class="b-col">
+        <div class="b-col-hdr"><div class="b-col-title"><span class="b-dot" style="background:rgba(255,200,80,0.6)"></span>To Do</div><span class="b-cnt">3</span></div>
+        <div class="k-card"><div class="k-type">🎯 FEATURE</div><div class="k-title">Implement CSS Grid macro layout for homepage</div><div class="k-footer"><span class="k-due">📅 Jun 3</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">AM</div></div></div></div>
+        <div class="k-card"><div class="k-type">📖 LEARNING</div><div class="k-title">Complete Pillar 1 wireframing exercise — low-fidelity only</div><div class="k-footer"><span class="k-due">📅 Jun 5</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">SR</div></div></div></div>
+        <div class="k-card"><div class="k-type">🐛 FIX</div><div class="k-title">Fix mobile nav overflow on small screens</div><div class="k-footer"><span class="k-due">📅 Jun 2</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">MK</div></div></div></div>
+      </div>
+      <div class="b-col">
+        <div class="b-col-hdr"><div class="b-col-title"><span class="b-dot" style="background:rgba(120,160,255,0.5)"></span>In Progress</div><span class="b-cnt">2</span></div>
+        <div class="k-card" style="border-left:2px solid rgba(255,255,255,0.15)"><div class="k-type">🚀 PROJECT</div><div class="k-title">Build responsive hero section — mobile-first approach</div><div class="k-footer"><span class="k-due">📅 Jun 4</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">AM</div><div class="kav" style="background:#141414">SR</div></div></div></div>
+        <div class="k-card" style="border-left:2px solid rgba(255,255,255,0.15)"><div class="k-type">📝 ASSIGNMENT</div><div class="k-title">Write empathy map for target user persona</div><div class="k-footer"><span class="k-due">📅 Jun 3</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">MK</div></div></div></div>
+      </div>
+      <div class="b-col">
+        <div class="b-col-hdr"><div class="b-col-title"><span class="b-dot" style="background:rgba(120,220,150,0.5)"></span>Completed</div><span class="b-cnt">5</span></div>
+        <div class="k-card" style="opacity:0.5"><div class="k-type">✅ DONE</div><div class="k-title">HTML5 semantic landmark structure implemented</div><div class="k-footer"><span class="k-due">✔ May 28</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">AM</div></div></div></div>
+        <div class="k-card" style="opacity:0.5"><div class="k-type">✅ DONE</div><div class="k-title">Submit Project 1 proposal to supervisor</div><div class="k-footer"><span class="k-due">✔ May 26</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">SR</div></div></div></div>
+        <div class="k-card" style="opacity:0.5"><div class="k-type">✅ DONE</div><div class="k-title">Flexbox navigation component completed</div><div class="k-footer"><span class="k-due">✔ May 24</span><div class="k-avs"><div class="kav" style="background:#1a1a1a">MK</div></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYTICS -->
+<div id="page-analytics" class="page">
+  <div class="page-wrap">
+    <span class="sec-eyebrow">Performance</span>
+    <div class="pg-title">Analytics</div>
+    <div class="pg-sub">Track your learning velocity and skill growth</div>
+    <div class="an-grid">
+      <div class="an-card"><div class="an-icon">⚡</div><div class="an-val">94</div><div class="an-lbl">Performance Score</div></div>
+      <div class="an-card"><div class="an-icon">⏱️</div><div class="an-val">68h</div><div class="an-lbl">Total Hours Logged</div></div>
+      <div class="an-card"><div class="an-icon">🏅</div><div class="an-val">3</div><div class="an-lbl">Badges Earned</div></div>
+      <div class="an-card"><div class="an-icon">📤</div><div class="an-val">7</div><div class="an-lbl">Projects Submitted</div></div>
+    </div>
+    <div class="big-chart">
+      <h3>Monthly Learning Hours</h3>
+      <p>Hours logged on the platform over the last 6 months</p>
+      <div class="m-chart" id="mchart"></div>
+      <div class="m-labels" id="mlabels"></div>
+    </div>
+    <div class="skills2">
+      <div class="i-card">
+        <h3>Skill Proficiency</h3>
+        <div class="sk-row"><span class="sk-name">HTML5 Semantics</span><div class="sk-bar"><div class="sk-fill" style="width:92%"></div></div><span class="sk-pct">92%</span></div>
+        <div class="sk-row"><span class="sk-name">CSS Grid/Flex</span><div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div><span class="sk-pct">80%</span></div>
+        <div class="sk-row"><span class="sk-name">JavaScript</span><div class="sk-bar"><div class="sk-fill" style="width:65%"></div></div><span class="sk-pct">65%</span></div>
+        <div class="sk-row"><span class="sk-name">Wireframing</span><div class="sk-bar"><div class="sk-fill" style="width:72%"></div></div><span class="sk-pct">72%</span></div>
+        <div class="sk-row" style="margin-bottom:0"><span class="sk-name">Accessibility</span><div class="sk-bar"><div class="sk-fill" style="width:58%"></div></div><span class="sk-pct">58%</span></div>
+      </div>
+      <div class="i-card">
+        <h3>Activity Breakdown</h3>
+        <div class="stat-row"><span class="stat-row-lbl">📖 Lessons Watched</span><span class="stat-row-val">156</span></div>
+        <div class="stat-row"><span class="stat-row-lbl">💻 Code Commits</span><span class="stat-row-val">89</span></div>
+        <div class="stat-row"><span class="stat-row-lbl">📝 Assignments Done</span><span class="stat-row-val">23</span></div>
+        <div class="stat-row"><span class="stat-row-lbl">🚀 Projects Shipped</span><span class="stat-row-val">7</span></div>
+        <div class="stat-row" style="border-color:rgba(255,255,255,0.1);margin-bottom:0"><span class="stat-row-lbl" style="color:#999">🏆 Avg Score</span><span class="stat-row-val" style="color:#ccc">94/100</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATES -->
+<div id="page-certs" class="page">
+  <div class="page-wrap">
+    <span class="sec-eyebrow">Credentials</span>
+    <div class="pg-title">Certificates</div>
+    <div class="pg-sub">Verified credentials for your professional portfolio</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-banner" style="background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,0.07) 0%,transparent 70%)">
+          <div style="text-align:center;position:relative;z-index:1"><div style="font-size:40px">🏆</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.15em;margin-top:6px">CERTIFIED</div></div>
+        </div>
+        <div class="cert-body"><div class="cert-title">HTML5 &amp; Semantic Architecture</div><div class="cert-meta">Issued May 20, 2025 · Verified by DecodeLabs</div><div class="cert-footer"><span class="cbadge gold">Distinction</span><button class="cert-dl">Download</button></div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-banner" style="background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,0.05) 0%,transparent 70%)">
+          <div style="text-align:center;position:relative;z-index:1"><div style="font-size:40px">🎖️</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.15em;margin-top:6px">CERTIFIED</div></div>
+        </div>
+        <div class="cert-body"><div class="cert-title">CSS Grid &amp; Responsive Design</div><div class="cert-meta">Issued Apr 12, 2025 · Verified by DecodeLabs</div><div class="cert-footer"><span class="cbadge silver">Merit</span><button class="cert-dl">Download</button></div></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-banner" style="background:radial-gradient(ellipse at 50% 0%,rgba(180,150,255,0.06) 0%,transparent 70%)">
+          <div style="text-align:center;position:relative;z-index:1"><div style="font-size:40px">💎</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.15em;margin-top:6px">CERTIFIED</div></div>
+        </div>
+        <div class="cert-body"><div class="cert-title">Full Stack Program Graduate</div><div class="cert-meta">Issued Jun 1, 2025 · Verified by DecodeLabs</div><div class="cert-footer"><span class="cbadge plat">Platinum</span><button class="cert-dl">Download</button></div></div>
+      </div>
+      <div class="cert-card" style="opacity:0.45;cursor:not-allowed">
+        <div class="cert-banner" style="background:transparent;border-bottom:1px solid var(--border)">
+          <div style="font-size:36px;opacity:0.2">🔒</div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-title" style="color:var(--text3)">JavaScript &amp; Interactivity</div>
+          <div class="cert-meta">Complete Phase 5 to unlock</div>
+          <div style="margin-top:12px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:6px"><span>Progress</span><span>40%</span></div>
+            <div style="height:2px;background:rgba(255,255,255,0.04);border-radius:100px"><div style="width:40%;height:100%;background:rgba(255,255,255,0.15);border-radius:100px"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH -->
+<div id="page-auth" class="page">
+  <div class="auth-outer">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="brand-mark" style="width:24px;height:24px">
+          <svg viewBox="0 0 28 28" fill="none"><path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/><circle cx="14" cy="14" r="2" fill="rgba(255,255,255,0.4)"/></svg>
+        </div>
+        <span class="brand-name">DecodeLabs</span>
+      </div>
+      <div class="auth-title" id="auth-title">Welcome back</div>
+      <div class="auth-sub" id="auth-subtitle">Secure JWT sign-in backed by the DecodeLabs API.</div>
+      <div class="auth-status" id="auth-status"></div>
+      <div class="soc-row">
+        <button class="soc-btn" id="oauth-github" type="button">🐙 GitHub</button>
+        <button class="soc-btn" id="oauth-google" type="button">🔵 Google</button>
+      </div>
+      <div class="div-line-wrap"><div class="div-line"></div><span class="div-txt">or continue with email</span><div class="div-line"></div></div>
+      <form id="auth-form">
+        <div class="f-group"><label class="f-lbl" for="auth-email">Email</label><input class="f-inp" id="auth-email" type="email" placeholder="ali@decodelabs.tech" autocomplete="email" required></div>
+        <div class="f-group"><label class="f-lbl" for="auth-password">Password</label><input class="f-inp" id="auth-password" type="password" placeholder="••••••••" autocomplete="current-password" required></div>
+        <button class="btn-auth" id="auth-submit" type="submit">Sign In to DecodeLabs</button>
+      </form>
+      <button class="auth-mode-toggle" id="auth-mode-toggle" type="button">Need an account? Sign Up</button>
+    </div>
+  </div>
+</div>
+
+<div class="notif-wrap" id="nw"></div>
+
+<footer>
+  <div class="f-brand">
+    <div class="brand-mark" style="width:22px;height:22px"><svg viewBox="0 0 28 28" fill="none"><path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none"/><circle cx="14" cy="14" r="2" fill="rgba(255,255,255,0.3)"/></svg></div>
+    <span class="brand-name" style="font-size:15px;color:#555">DecodeLabs</span>
+  </div>
+  <div class="f-copy">decodelabs.tech@gmail.com · Greater Lucknow, India · Batch 2026</div>
+  <div class="f-links">
+    <span class="f-link">Privacy</span>
+    <span class="f-link">Terms</span>
+    <span class="f-link" onclick="showPage('auth')">Sign In</span>
+  </div>
+</footer>
+
+<script src="api.js"></script>
+<script src="learningdashboard.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
